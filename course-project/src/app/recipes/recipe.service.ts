@@ -11,7 +11,7 @@ export class RecipeService {
     new Recipe(
       'Tasty Schnitzel',
       'A super-tasty Schnitzel - just awesome',
-      'https://www.savorytooth.com/wp-content/uploads/2016/01/chicken-tikka-masala-bowl-square.jpg',
+      './assets/images/img1.jpg',
       [
         new Ingredient('Meat', 1),
         new Ingredient('French Fries', 20),
@@ -20,7 +20,7 @@ export class RecipeService {
     new Recipe(
       'Big Fat Burger',
       'What else you need to say?',
-      'https://www.savorytooth.com/wp-content/uploads/2016/01/chicken-tikka-masala-bowl-square.jpg',
+      './assets/images/img2.jpg',
       [
         new Ingredient('Buns', 2),
         new Ingredient('Meat', 2)
@@ -32,6 +32,10 @@ export class RecipeService {
 
   getRecipes() {
     return this.recipes.slice(); // returns a copy of the array
+  }
+
+  getRecipe(index: number) {
+    return this.recipes[index];
   }
 
   addIngredientsToShoppingList(ingredients: Ingredient[]) {
